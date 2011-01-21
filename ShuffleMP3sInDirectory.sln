@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShuffleMP3sInDirectory", "ShuffleMP3sInDirectory.vcproj", "{8B7354BD-3CA2-446B-BB4B-A028F3542263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B7354BD-3CA2-446B-BB4B-A028F3542263}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8B7354BD-3CA2-446B-BB4B-A028F3542263}.Debug|Win32.Build.0 = Debug|Win32
+		{8B7354BD-3CA2-446B-BB4B-A028F3542263}.Release|Win32.ActiveCfg = Release|Win32
+		{8B7354BD-3CA2-446B-BB4B-A028F3542263}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
