@@ -1,93 +1,44 @@
-================================================================================
-    MICROSOFT FOUNDATION CLASS LIBRARY : ShuffleMP3sInDirectory Project Overview
-===============================================================================
+This little application is used to shuffle MP3 files.
 
-The application wizard has created this ShuffleMP3sInDirectory application for
-you.  This application not only demonstrates the basics of using the Microsoft
-Foundation Classes but is also a starting point for writing your application.
+I have several MP3 players that I use in various ways, and several are so cheap
+that they have no shuffle option.  I hate listening to music in the same order
+over and over again, so I figured I would write a quick program to shuffle those
+file right in the file system.
 
-This file contains a summary of what you will find in each of the files that
-make up your ShuffleMP3sInDirectory application.
+I start by using Window Media player to populate a playlist or two to an SD
+card.  Say for example my E:\ drive.  This leaves me with a Music directory
+filled with Artist name, then each of those is filled with Album Names, and
+finally individual songs sorted by Track number.
 
-ShuffleMP3sInDirectory.vcproj
-    This is the main project file for VC++ projects generated using an application wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    application wizard.
+I run this application and point it at the E:\ directory and click the Read
+button.  It finds all of the files and randomizes them, then puts the new
+random list up for me to see.  I don't know why I wouldn't like the order it
+picks, but if I didn't, I could just click the read button again.
 
-ShuffleMP3sInDirectory.h
-    This is the main header file for the application.  It includes other
-    project specific headers (including Resource.h) and declares the
-    CShuffleMP3sInDirectoryApp application class.
+The app also shows me how many files were found and how big the whole lot is.
 
-ShuffleMP3sInDirectory.cpp
-    This is the main application source file that contains the application
-    class CShuffleMP3sInDirectoryApp.
+Once I'm sure I have the right files and a good order, I click the Write
+button.  The files get shuffled into multiple directories and renamed starting
+with 0000name.mp3, 0001name.mp3 , 0002name.mp3 etc.
 
-ShuffleMP3sInDirectory.rc
-    This is a listing of all of the Microsoft Windows resources that the
-    program uses.  It includes the icons, bitmaps, and cursors that are stored
-    in the RES subdirectory.  This file can be directly edited in Microsoft
-    Visual C++. Your project resources are in 1033.
+The directories start as 0000, 0100, 0200, 0300, ets to break the directories
+so they contain no more than 100 files each.  You have to do this because if you
+are using FAT formatted media, you are limited by the number of files in a
+directory.  It's possible that 100 is still too many if you have really long
+filenames on your MP3s, but mine seem to work.
 
-res\ShuffleMP3sInDirectory.ico
-    This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file ShuffleMP3sInDirectory.rc.
+WARNING!  When you click the Write button, it's going to take quite a while
+to do all of the renaming.  Flash media isn't really that fast so be patient.
+I usually have around 600 files on a 4gig SD card and it takes about 5
+minutes to rename them all.
 
-res\ShuffleMP3sInDirectory.rc2
-    This file contains resources that are not edited by Microsoft
-    Visual C++. You should place all resources not editable by
-    the resource editor in this file.
+I have included a pre-built binary, but I named it "RENAME_AT_YOUR_OWN_RISK".
+If you want to use it you might need to google search for "visual studio sp1
+redistributable" to download and get the files you need.  Install them, then
+run "rename RENAME_AT_YOUR_OWN_RISK ShuffleMP3sInDirectory.exe" so you can
+run it.  As always, virus scan before you do it.  I don't think I have any
+viruses on my computer, but who ever does?
 
+It works for me, and if you need it, feel free to use it yourself.
 
-/////////////////////////////////////////////////////////////////////////////
-
-The application wizard creates one dialog class:
-
-ShuffleMP3sInDirectoryDlg.h, ShuffleMP3sInDirectoryDlg.cpp - the dialog
-    These files contain your CShuffleMP3sInDirectoryDlg class.  This class defines
-    the behavior of your application's main dialog.  The dialog's template is
-    in ShuffleMP3sInDirectory.rc, which can be edited in Microsoft Visual C++.
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-Other Features:
-
-ActiveX Controls
-    The application includes support to use ActiveX controls.
-
-/////////////////////////////////////////////////////////////////////////////
-
-Other standard files:
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named ShuffleMP3sInDirectory.pch and a precompiled types file named StdAfx.obj.
-
-Resource.h
-    This is the standard header file, which defines new resource IDs.
-    Microsoft Visual C++ reads and updates this file.
-
-ShuffleMP3sInDirectory.manifest
-	Application manifest files are used by Windows XP to describe an applications
-	dependency on specific versions of Side-by-Side assemblies. The loader uses this
-	information to load the appropriate assembly from the assembly cache or private
-	from the application. The Application manifest  maybe included for redistribution
-	as an external .manifest file that is installed in the same folder as the application
-	executable or it may be included in the executable in the form of a resource.
-/////////////////////////////////////////////////////////////////////////////
-
-Other notes:
-
-The application wizard uses "TODO:" to indicate parts of the source code you
-should add to or customize.
-
-If your application uses MFC in a shared DLL, you will need
-to redistribute the MFC DLLs. If your application is in a language
-other than the operating system's locale, you will also have to
-redistribute the corresponding localized resources MFC90XXX.DLL.
-For more information on both of these topics, please see the section on
-redistributing Visual C++ applications in MSDN documentation.
-
-/////////////////////////////////////////////////////////////////////////////
+Clay

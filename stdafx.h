@@ -12,6 +12,8 @@
 #ifndef VC_EXTRALEAN
 #define VC_EXTRALEAN            // Exclude rarely-used stuff from Windows headers
 #endif
+#define _CRT_RAND_S
+#include <stdlib.h>
 
 #include "targetver.h"
 
